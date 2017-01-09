@@ -1,0 +1,25 @@
+{
+    "broad_input_file": {
+        "path": "data/ee02368e-f1b2-11e5-b843-cb11c0d1e6cc/81bc7f0c-865d-4801-a935-2ab04170df53_annotated_broad_SNV.vcf.gz",
+        "class": "File"
+    },
+    "dkfz_embl_input_file": {
+        "path": "data/ee02368e-f1b2-11e5-b843-cb11c0d1e6cc/81bc7f0c-865d-4801-a935-2ab04170df53_annotated_dkfz_embl_SNV.vcf.gz",
+        "class": "File"
+    },
+    "muse_input_file": {
+        "path": "data/ee02368e-f1b2-11e5-b843-cb11c0d1e6cc/81bc7f0c-865d-4801-a935-2ab04170df53_annotated_muse_SNV.vcf.gz",
+        "class": "File"
+    },
+    "sanger_input_file": {
+        "path": "data/ee02368e-f1b2-11e5-b843-cb11c0d1e6cc/81bc7f0c-865d-4801-a935-2ab04170df53_annotated_sanger_SNV.vcf.gz",
+        "class": "File"
+    },
+    "dbs_dir": {
+        "path": "dbs",
+        "location": "dbs",
+        "class": "Directory"
+    },
+    "output_file_name": "consensus.vcf",
+    "variant_type": "snv"
+}
