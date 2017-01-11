@@ -1,4 +1,4 @@
-!/usr/bin/env cwl-runner
+#!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
 id: "ConsensusCalling"
@@ -23,41 +23,28 @@ requirements:
       dockerPull: pancancer/consensus_call
     - class: InlineJavascriptRequirement
 
-baseCommand: filter header_from_tsv
+baseCommand: [filter, sex]
 
 inputs:
-    - id: "#header_name"
+    sex:
       type: string
       inputBinding:
           position: 1
-          prefix: "-n"
+          prefix: "-s"
 
-    - id: "#sample_ID"
+    input_file:
       type: File
       inputBinding:
           position: 2
-          prefix: "-I"
-
-    - id: "#column"
-      type: string
-      inputBinding:
-          position: 3
-          prefix: "-c"
-
-    - id: "#tsv"
-      type: File
-      inputBinding:
-          position: 4
-          prefix: "-t"
-
-    - id: "#input"
-      type: File
-      inputBinding:
-          position: 5
           prefix: "-i"
+
+arguments:
+    - prefix: -o
+      valueFrom: $(runtime.outdir)/$(inputs.output_file_name)
+      position: 3
 
 outputs:
     output_vcf:
         type: File
         outputBinding:
-            glob: "output.vcf"
+            glob: "$(inputs.output_file_name)"

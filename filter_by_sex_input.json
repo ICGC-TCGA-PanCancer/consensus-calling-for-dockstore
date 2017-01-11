@@ -1,0 +1,8 @@
+{
+    "input_file": {
+        "path": "data/ee02368e-f1b2-11e5-b843-cb11c0d1e6cc/81bc7f0c-865d-4801-a935-2ab04170df53_annotated_broad_SNV.vcf.gz",
+        "class": "File"
+    },
+    "output_file_name": "filtered_by_sex.vcf",
+    "sex": "female"
+}
