@@ -26,14 +26,14 @@ requirements:
         USE_DB_PATH: $(inputs.dbs_dir.path)/annotation_databases
 
 inputs:
-    - id: "#variant_type"
+    variant_type:
       type: string
       inputBinding:
         position: 1
       secondaryFiles:
         - .tbi
 
-    - id: "#broad_input_file"
+    broad_input_file:
       type: File
       inputBinding:
         position: 2
@@ -41,7 +41,7 @@ inputs:
       secondaryFiles:
         - .tbi
 
-    - id: "#dkfz_embl_input_file"
+    dkfz_embl_input_file:
       type: File
       inputBinding:
         position: 3
@@ -49,7 +49,7 @@ inputs:
       secondaryFiles:
         - .tbi
 
-    - id: "#muse_input_file"
+    muse_input_file:
       type: File
       inputBinding:
         position: 4
@@ -57,7 +57,7 @@ inputs:
       secondaryFiles:
         - .tbi
 
-    - id: "#sanger_input_file"
+    sanger_input_file:
       type: File
       inputBinding:
         position: 5
@@ -65,7 +65,7 @@ inputs:
       secondaryFiles:
         - .tbi
 
-    - id: "#dbs_dir"
+    dbs_dir:
       type: Directory
 
 arguments:
