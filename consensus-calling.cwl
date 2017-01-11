@@ -15,13 +15,15 @@ dct:creator:
     foaf:mbox: "solomon.shorser@oicr.on.ca"
 
 dct:contributor:
-  foaf:name: "Jonathan Dursi"
-  foaf:mbox: "jonathan.dursi@sickkids.ca"
+    foaf:name: "Jonathan Dursi"
+    foaf:mbox: "jonathan.dursi@sickkids.ca"
 
 requirements:
-    - class: DockerRequirement
+    DockerRequirement:
       dockerPull: pancancer/consensus_call
-    - class: InlineJavascriptRequirement
+    EnvVarRequirement:
+      envDef:
+        USE_DB_PATH: $(inputs.dbs_dir.path)/annotation_databases
 
 inputs:
     - id: "#variant_type"
@@ -66,16 +68,21 @@ inputs:
     - id: "#dbs_dir"
       type: Directory
 
-    - id: "#output_file_name"
-      type: string
-      inputBinding:
-        position: 6
-        prefix: "-o"
+arguments:
+    - prefix: -o
+      valueFrom: $(runtime.outdir)/$(inputs.output_file_name)
+      position: 6
 
 outputs:
-    consensus_file:
+    consensus_zipped_vcf:
       type: File
       outputBinding:
-          glob: "*$(input.output_file_name)"
+          glob: "$(inputs.output_file_name).gz"
+    consensus_vcf_index:
+      type: File
+      outputBinding:
+          glob: "$(inputs.output_file_name).gz.tbi"
+
+
 
 baseCommand: consensus

@@ -16,8 +16,8 @@
         "class": "File"
     },
     "dbs_dir": {
-        "path": "dbs",
-        "location": "dbs",
+        "path": "../../dbs",
+        "location": "../../dbs",
         "class": "Directory"
     },
     "output_file_name": "consensus.vcf",
